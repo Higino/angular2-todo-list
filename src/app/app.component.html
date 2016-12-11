@@ -1,19 +1,12 @@
 <h1>{{appName}} App!</h1>
-<hr>
-<div *ngIf='selectedTask'>
-  <h2>{{selectedTask.name}}</h2>
-  <div><label>ID: </label>{{selectedTask.id}}</div>
-  <div><label>Descrição: </label>{{selectedTask.desc}}</div>
-  <div>
-    <label>Nome: </label>
-    <input [(ngModel)]="task.name" placeholder="name">
-  </div>
-  <hr>
-</div>
 <h2>As minhas tarefas:</h2>
 <button (click)="onUnselectButtonClick()">Limpar tarefa</button>
 <ul class="tasks">
-  <li *ngFor='let task of tasks' (click)="onSelectTask(task)" [class.selected]="task === selectedTask">
+  <li *ngFor="let task of tasks"
+     (click)="onSelectTask(task)"
+     [class.selected]="task === selectedTask">
     <span class='badge'>{{task.id}}</span> {{task.name}}
   </li>
 </ul>
+<hr>
+<task-detail [task]="selectedTask"></task-detail>

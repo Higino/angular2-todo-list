@@ -1,35 +1,5 @@
 import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  tasks = TASKS;
-  selectedTask : Task;
-  task: Task = {
-    id: 1,
-    name: 'Uma tarefa',
-    desc: 'A descrição de uma tarefa'
-  };
-  appName =  'Gestor de Tarefas';
-  onSelectTask(task: Task): void {
-    this.selectedTask = task;
-  };
-  onUnselectButtonClick(): void {
-    console.log("unselecte cliecked");
-    this.selectedTask = null;
-  }
-}
-
-
-export class Task {
-  id: number;
-  name: string;
-  desc: string;
-}
-
+import { Task } from './task'
 
 const TASKS: Task [] = [
   {id: 1, name: 'Tarefa numero 1', desc: 'Descrição da tarefa numero 1'},
@@ -42,4 +12,23 @@ const TASKS: Task [] = [
   {id: 8, name: 'Tarefa numero 8', desc: 'Descrição da tarefa numero 8'},
   {id: 9, name: 'Tarefa numero 9', desc: 'Descrição da tarefa numero 9'},
   {id: 10, name: 'Tarefa numero 10', desc: 'Descrição da tarefa numero 10'},
-]
+];
+
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  appName =  'Gestor de Tarefas';
+  tasks = TASKS;
+  selectedTask : Task;
+
+  onSelectTask(task: Task): void {
+    this.selectedTask = task;
+  };
+  onUnselectButtonClick(): void {
+    this.selectedTask = null;
+  }
+}
