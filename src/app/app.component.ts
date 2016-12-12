@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   }
 
   getTasks(): void {
-    this.tasks = this.taskService.getTasks();
+    this.taskService.getTasks().then(tasks => this.tasks = tasks);
   }
 
   onSelectTask(task: Task): void {

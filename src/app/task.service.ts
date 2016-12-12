@@ -4,7 +4,7 @@ import { Task } from './task';
 
 @Injectable()
 export class TaskService {
-  getTasks(): Task[] {
-    return TASKS;
+  getTasks(): Promise<Task[]> {
+    return Promise.resolve(TASKS);
   }
 }
