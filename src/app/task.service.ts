@@ -7,4 +7,10 @@ export class TaskService {
   getTasks(): Promise<Task[]> {
     return Promise.resolve(TASKS);
   }
+
+getTasksSlowly(): Promise<Task[]> {
+  return new Promise<Task[]>(resolve =>
+    setTimeout(resolve, 2000)) // delay 2 seconds
+    .then(() => this.getTasks());
+}
 }
