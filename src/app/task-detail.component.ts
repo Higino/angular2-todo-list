@@ -1,5 +1,6 @@
-import {Component, Input } from '@angular/core'
-import { Task } from './task'
+import {Component, Input } from '@angular/core';
+import { Task } from './task';
+import { TaskService } from './task.service';
 
 @Component({
   selector: 'task-detail',
