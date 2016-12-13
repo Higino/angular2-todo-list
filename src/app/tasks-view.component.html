@@ -1,0 +1,14 @@
+  <h2>As minhas tarefas:<br><button (click)="onUnselectButtonClick()">Limpar tarefa</button></h2>
+
+  <nav>
+  <ul class="tasks">
+    <li *ngFor="let task of tasks"
+      (click)="onSelectTask(task)"
+      [class.selected]="task === selectedTask">
+      <span class='badge'><input type="checkbox" value="{{task.id})"/></span> {{task.name}}
+    </li>
+  </ul>
+  </nav>
+  <article>
+    <task-detail [task]="selectedTask"></task-detail>
+  </article>

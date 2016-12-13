@@ -3,13 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { TaskDetailComponent  } from './task-detail.component'
+import { TasksViewComponent } from './tasks-view.component';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TaskDetailComponent
+    TaskDetailComponent,
+    TasksViewComponent
   ],
   imports: [
     BrowserModule,
